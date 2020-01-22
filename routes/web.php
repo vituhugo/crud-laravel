@@ -12,7 +12,13 @@
 */
 
 Route::get('/', function () {
+    //$pet = App\Pet::first();
+    //dd(pet->owner);
+    $owner = App\Owner::first();
+    // dd($owner, $owner->pets);
     return view('welcome');
 });
 
 Route::get('/index', 'PetsController@index');
+Route::get('/pets', 'PetsController@index');
+Route::get('/owner', 'PetsController@index');

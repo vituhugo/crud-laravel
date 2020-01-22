@@ -7,10 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    <pre>
-        <?php
-            print_r($pets);
-        ?>
-    </pre>
+
+    @foreach($pets as $pet)
+        <h3>{{ $pet["name"]}}</h3>
+    @endforeach
+    
 </body>
 </html>

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class PetsCreate extends Migration
+class AlterPets extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class PetsCreate extends Migration
      */
     public function up()
     {
-        Schema::create('pets', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('name', 255);
-            $table->string('RGA', 255);
-            $table->date('data_nascimento');
-            $table->timestamps();
+        Schema::table('pets', function (Blueprint $table) {
+            $table->bigInteger('owner_id');
         });
     }
 
@@ -29,6 +25,8 @@ class PetsCreate extends Migration
      */
     public function down()
     {
-        schema::drop('pets');
+        Schema::table('pets', function (Blueprint $table) {
+            $table->dropColumn('owner_id');
+        });
     }
 }
