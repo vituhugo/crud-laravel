@@ -19,8 +19,4 @@ class PetsController extends Controller
         return view('petsIndex', compact('pets'));
     }
 
-    public function owner(){
-        $owner = \App\Owner::all();
-        return view('owner', compact('owners'));
-    }
 }
