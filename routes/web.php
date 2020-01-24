@@ -24,3 +24,6 @@ Route::get('/pets', 'PetsController@index');
 Route::get('/owner', 'OwnersController@owner');
 Route::get('/pets/create', 'PetsController@create');
 Route::post('/pets/store', 'PetsController@store');
+Route::get('/pets/edit/{id}', 'PetsController@edit');
+Route::patch('/pets/update/{id}', 'PetsController@update');
+Route::delete('/pets/destroy/{id}', 'PetsController@destroy');
